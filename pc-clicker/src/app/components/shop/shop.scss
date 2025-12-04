@@ -1,0 +1,27 @@
+/* shop-popup.component.scss */
+.popup {
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  width: 450px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.buttons button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
