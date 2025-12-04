@@ -2,7 +2,7 @@ export abstract  class Upgrade {
   private _level : number;
   private _actualPrice : number;
 
-  constructor(private _name:string, private basePrice : number, private multi : number, private _bonus : number) {
+  constructor(private _name:string, private basePrice : number, private multi : number, private _bonus : number, private _affectedStat : string) {
     this._level = 0;
     this._actualPrice = basePrice;
   }
