@@ -1,0 +1,26 @@
+/* Masquer le lien */
+#liens {
+  display: none;   /* cache complètement l'élément */
+}
+
+/* Header */
+header {
+  display: flex;              /* mise en ligne des éléments */
+  justify-content: space-between; /* images aux extrémités */
+  align-items: center;        /* alignement vertical */
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc; /* fine ligne en bas du header */
+  background-color: #f9f9f9;
+}
+
+/* Les images */
+header img {
+  max-height: 50px;           /* taille raisonnable */
+}
+
+/* Le bouton centré */
+header app-gamebtn {
+  flex: 1;                    /* occupe l’espace central */
+  display: flex;
+  justify-content: center;    /* centré horizontalement */
+}

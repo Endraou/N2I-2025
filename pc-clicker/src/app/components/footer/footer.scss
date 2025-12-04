@@ -1,0 +1,25 @@
+footer {
+  position: fixed;          /* reste collé en bas de l'écran */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ccc; /* ligne fine en haut du footer */
+  background-color: #f9f9f9;  /* couleur de fond légère */
+  text-align: center;         /* centrage horizontal */
+  padding: 10px 0;            /* un peu d'espace vertical */
+}
+
+footer p {
+  display: inline;            /* les <p> côte à côte */
+  margin: 0 15px;             /* espace entre les liens */
+}
+
+footer a {
+  text-decoration: none;      /* pas de soulignement */
+  color: #333;                /* couleur du texte */
+  font-weight: 500;           /* un peu plus visible */
+}
+
+footer a:hover {
+  color: #007acc;             /* couleur au survol */
+}
