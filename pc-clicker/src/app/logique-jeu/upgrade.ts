@@ -1,4 +1,4 @@
-abstract  class Upgrade {
+export abstract  class Upgrade {
   private _level : number;
   private _actualPrice : number;
 
