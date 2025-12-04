@@ -1,10 +1,19 @@
-export abstract  class Upgrade {
-  private _level : number;
-  private _actualPrice : number;
+export class Upgrade {
 
-  constructor(private _name:string, private basePrice : number, private multi : number, private _bonus : number, private _affectedStat : string) {
+  private _name : string;
+  private _actualPrice : number;
+  private _multi : number;
+  private _bonus : number;
+  private _isPassive : boolean;
+  private _level : number;
+
+  constructor(_name:string, basePrice : number, multi : number, _bonus : number, _isPassive : boolean) {
     this._level = 0;
     this._actualPrice = basePrice;
+    this._multi = multi;
+    this._bonus = _bonus;
+    this._isPassive = _isPassive;
+    this._name = _name;
   }
 
   get level(): number {
@@ -23,20 +32,28 @@ export abstract  class Upgrade {
     return this._bonus;
   }
 
+
+  get isPassive(): boolean {
+    return this._isPassive;
+  }
+
   getGroupPrice(quantity: number) {
     let sum = 0;
     for (let i = 0; i < quantity; i++) {
-      sum += this._actualPrice * Math.pow(this.multi, i);
+      sum += this._actualPrice * Math.pow(this._multi, i);
     }
     return sum;
   }
 
   buy(actualMoney: number, quantity: number) {
-    const totalCost = this.getGroupPrice(quantity);
-    if (actualMoney >= totalCost) {
-      this._level += quantity;
-      this._actualPrice *= Math.pow(this.multi, quantity);
-      return true;
+    if(this._actualPrice > 0 ) {
+      const totalCost = this.getGroupPrice(quantity);
+      if (actualMoney >= totalCost) {
+        this._level += quantity;
+        this._actualPrice *= Math.pow(this._multi, quantity);
+        return true;
+      }
+      return false;
     }
     return false;
   }

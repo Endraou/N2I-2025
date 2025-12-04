@@ -1,6 +1,6 @@
 import {Upgrade} from './upgrade';
 
-export abstract class HardwareUpgrade {
+export class HardwareUpgrade {
   private hp : number;
   private upgrade : Upgrade[];
   constructor(private name:string, private decay:number) {
