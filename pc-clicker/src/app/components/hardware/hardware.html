@@ -1,9 +1,7 @@
 <div class="hardware-container">
-
   <div class="hardware-card" *ngFor="let h of hardware()">
-
     <div class="hardware-header">
-      <span class="icon">🔧</span>
+      <span class="icon" (click)="repairHardware(h)">🔧</span>
       <span class="name">{{ h.name }}</span>
     </div>
 
@@ -12,7 +10,5 @@
     </div>
 
     <p class="hp-text">{{ h.hp | number:'1.0-0' }} %</p>
-
   </div>
-
 </div>
