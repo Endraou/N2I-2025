@@ -1,0 +1,32 @@
+<!-- shop-popup.component.html -->
+<div class="backdrop" (click)="closeShop()"></div>
+
+<div class="popup">
+  <button class="close-btn" (click)="closeShop()">X</button>
+  <h2>Shop</h2>
+  <p>Argent disponible : {{ money() | number }}</p>
+
+  <div class="category">
+    <h3>App Open Source</h3>
+    <div class="item" *ngFor="let upgrade of openSourceUpgrades">
+      <span>{{upgrade.name}} - Prix: {{upgrade.actualPrice | number}}$ - Niveau: {{upgrade.level}}</span>
+      <div class="buttons">
+        <button (click)="buy(upgrade, 1)">+1</button>
+        <button (click)="buy(upgrade, 10)">+10</button>
+        <button (click)="buy(upgrade, 100)">+100</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>NIRD Assistant</h3>
+    <div class="item" *ngFor="let upgrade of nirdUpgrades">
+      <span>{{upgrade.name}} - Prix: {{upgrade.actualPrice | number}}$ - Niveau: {{upgrade.level}}</span>
+      <div class="buttons">
+        <button (click)="buy(upgrade, 1)">+1</button>
+        <button (click)="buy(upgrade, 10)">+10</button>
+        <button (click)="buy(upgrade, 100)">+100</button>
+      </div>
+    </div>
+  </div>
+</div>
