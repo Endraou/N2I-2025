@@ -105,8 +105,41 @@ export class LogiqueJeu{
     if (success) {
       this.money.set(moneyValue - upgrade.getGroupPrice(quantity));
     } else {
-      alert('Pas assez d’argent !');
+      this.showNotification("Pas assez d'argent !");
     }
+  }
+
+  showNotification( message : string) {
+    // Créer la notification
+    const notif = document.createElement('div');
+    notif.innerHTML = `
+    <div style="
+        font-family : 'Connection', Sans-serif;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #bd1f1f, #ac2121);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-weight: 500;
+      z-index: 9999;
+      animation: slideIn 0.3s ease-out;
+    ">
+      ${message}
+    </div>
+    <style>
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+    </style>
+  `;
+
+    document.body.appendChild(notif);
+
+    // Retirer après 3 secondes
+    setTimeout(() => notif.remove(), 3000);
   }
 
   private updateGainPerSecond() {
