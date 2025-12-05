@@ -45,27 +45,27 @@ export class LogiqueJeu{
     */
     const screenSaver = new Upgrade("Économiseur d'écran", 200, -1, 0.75, true);
     const lowBrightness = new Upgrade("Basse Luminosité", 100, -1, 0.05, true);
-    const screen = new HardwareUpgrade('Écran', -2);
+    const screen = new HardwareUpgrade('Écran', 0.02);
     screen.addUpgrade(screenSaver);
     screen.addUpgrade(lowBrightness);
 
     const surgeProtector = new Upgrade("Protection Surtension", 350, -1, 2, true);
-    const power = new HardwareUpgrade('Alimentation', -1);
+    const power = new HardwareUpgrade('Alimentation', 0.03);
     power.addUpgrade(surgeProtector);
 
     const thermalPaste = new Upgrade("Pâte Thermique", 150, -1, 1.5, true);
     const cpuGovernor = new Upgrade("Gouverneur d'Économie d'Énergie", 400, -1, 1.5, true);
-    const CPU = new HardwareUpgrade('Processeur', -5);
+    const CPU = new HardwareUpgrade('Processeur', 0.01);
     CPU.addUpgrade(thermalPaste);
     CPU.addUpgrade(cpuGovernor);
 
     const driverOptimization = new Upgrade("Mise à jour des drivers", 600, -1, 1, true);
-    const GPU = new HardwareUpgrade('Carte Graphique', 1.5);
+    const GPU = new HardwareUpgrade('Carte Graphique', 0.04);
     GPU.addUpgrade(driverOptimization);
 
     const diskDefrag = new Upgrade("Défragmentation Régulière", 150, -1, 1, true);
     const trimSupport = new Upgrade("Support TRIM (SSD)", 750, -1, 0.6, true);
-    const HDD = new HardwareUpgrade('Disque Dur', -2);
+    const HDD = new HardwareUpgrade('Disque Dur', 0.05);
     HDD.addUpgrade(diskDefrag);
     HDD.addUpgrade(trimSupport);
 
@@ -77,8 +77,8 @@ export class LogiqueJeu{
   private startGameLoop() {
     setInterval(() => {
       this.updateGainPerSecond();
-      console.log("test");
       this.applyPassiveIncome();
+      this.applyHardwareDecay();
     }, 1000);
   }
 
@@ -102,10 +102,10 @@ export class LogiqueJeu{
   buy(upgrade: Upgrade, quantity: number) {
     const moneyValue = this.money();
     const success = upgrade.buy(moneyValue, quantity);
-    if (success) {
-      this.money.set(moneyValue - upgrade.getGroupPrice(quantity));
-    } else {
+    if (success == -1) {
       alert('Pas assez d’argent !');
+    } else {
+      this.money.set(moneyValue - success);
     }
   }
 
@@ -132,6 +132,19 @@ export class LogiqueJeu{
 
   private applyPassiveIncome() {
     this.money.update(m => m + this.gainPerSecond());
+  }
+
+  private applyHardwareDecay() {
+    const list = this._hardwareUpgrade();
+
+    for (const hardware of list) {
+      hardware.reduce();   // <-- on utilise la méthode de l’objet
+      if (hardware.hp < 0) hardware.hp = 0;
+      if (hardware.hp > 100) hardware.hp = 100;
+    }
+
+    // On réinjecte la liste pour déclencher les signaux
+    this._hardwareUpgrade.set([...list]);
   }
 
   clickOnScreen() {

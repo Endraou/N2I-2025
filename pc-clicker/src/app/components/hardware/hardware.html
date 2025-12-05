@@ -1,0 +1,18 @@
+<div class="hardware-container">
+
+  <div class="hardware-card" *ngFor="let h of hardware()">
+
+    <div class="hardware-header">
+      <span class="icon">🔧</span>
+      <span class="name">{{ h.name }}</span>
+    </div>
+
+    <div class="hp-bar">
+      <div class="hp-fill" [style.width.%]="h.hp"></div>
+    </div>
+
+    <p class="hp-text">{{ h.hp | number:'1.0-0' }} %</p>
+
+  </div>
+
+</div>

@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; // <--- IMPORTANT
 import { ShopPopupComponent} from '../shop/shop';
 import {LogiqueJeuService} from '../../logique-jeu/logique-jeu-service';
+import {HardwareStatusComponent} from '../hardware/hardware';
 
 @Component({
   selector: 'game-screen',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, ShopPopupComponent], // <-- ajouter CommonModule
+  imports: [RouterOutlet, CommonModule, ShopPopupComponent, HardwareStatusComponent], // <-- ajouter CommonModule
   templateUrl: './screen.html',
   styleUrls: ['./screen.scss'],
 })

@@ -51,11 +51,11 @@ export class Upgrade {
       if (actualMoney >= totalCost) {
         this._level += quantity;
         this._actualPrice *= Math.pow(this._multi, quantity);
-        return true;
+        return totalCost;
       }
-      return false;
+      return -1;
     }
-    return false;
+    return -1;
   }
 
 }

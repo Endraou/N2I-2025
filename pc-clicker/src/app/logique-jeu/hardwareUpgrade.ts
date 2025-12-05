@@ -1,19 +1,29 @@
 import {Upgrade} from './upgrade';
 
 export class HardwareUpgrade {
-  private hp : number;
+  set hp(value: number) {
+    this._hp = value;
+  }
+  get hp(): number {
+    return this._hp;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+  private _hp : number;
   private upgrade : Upgrade[];
-  constructor(private name:string, private decay:number) {
-    this.hp = 100;
+  constructor(private _name:string, private decay:number) {
+    this._hp = 100;
     this.upgrade =  [];
   }
 
   reduce() {
-    this.hp *= 1-this.decay;
+    this._hp *= 1-this.decay;
   }
 
   repair() {
-    this.hp = 100;
+    this._hp = 100;
   }
 
   addUpgrade(upgrade : Upgrade) {
