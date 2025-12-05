@@ -71,9 +71,15 @@ export class LogiqueJeu {
   get hardwareUpgrade(): WritableSignal<HardwareUpgrade[]> {
     return this._hardwareUpgrade;
   }
+
   get openSourceUpgrades(): WritableSignal<Upgrade[]> {
     return this._openSourceUpgrades;
   }
+
+  get getmoney() {
+    return this.money;
+  }
+
   get nirdUpgrades(): WritableSignal<Upgrade[]> {
     return this._nirdUpgrades;
   }
@@ -108,7 +114,41 @@ export class LogiqueJeu {
     this._hardwareUpgrade.set([...this._hardwareUpgrade()]);
   }
 
+  showNotification( message : string) {
+    // Créer la notification
+    const notif = document.createElement('div');
+    notif.innerHTML = `
+    <div style="
+        font-family : 'Connection', Sans-serif;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #bd1f1f, #ac2121);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-weight: 500;
+      z-index: 9999;
+      animation: slideIn 0.3s ease-out;
+    ">
+      ${message}
+    </div>
+    <style>
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+    </style>
+  `;
+
+    document.body.appendChild(notif);
+
+    // Retirer après 3 secondes
+    setTimeout(() => notif.remove(), 3000);
+  }
+
   private updateGainPerSecond() {
+
     let gain = 0;
     for (const u of this._nirdUpgrades()) gain += u.level * u.bonus;
     this.gainPerSecond.set(gain);

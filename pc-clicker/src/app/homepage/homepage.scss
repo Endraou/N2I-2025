@@ -1,0 +1,159 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Masquer le lien */
+#liens {
+  display: none;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header img {
+  max-height: 50px;
+  transition: opacity 0.3s ease;
+}
+
+header app-gamebtn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+header app-gamebtn.visible {
+  opacity: 1;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Connection', sans-serif;
+  overflow: hidden;
+}
+
+/* Section Hero - prend toute la hauteur de l'écran */
+#hero-section {
+  padding-top : 19%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Le bouton principal - visible et centré au chargement */
+#btn {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  font-size: 80px;
+}
+
+app-gamebtn {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+app-gamebtn:hover {
+  transform: scale(1.1);
+}
+
+/* Quand on scroll, le bouton disparaît avec un effet de zoom */
+app-gamebtn.hidden-btn {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Section du contenu */
+#content-section {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+/* Le contenu texte - caché au départ */
+#texte {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Le contenu devient visible au scroll */
+#texte.visible-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Style du contenu */
+h2 {
+  color: #333;
+  font-size: 3rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+ul {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #texte {
+    padding: 60px 8% 80px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p, li {
+    font-size: 1rem;
+  }
+}
