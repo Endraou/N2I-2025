@@ -8,7 +8,7 @@
 
   <div class="category">
     <h3>App Open Source</h3>
-    <div class="item" *ngFor="let upgrade of openSourceUpgrades()">
+    <div class="item" *ngFor="let upgrade of openSourceUpgrades">
       <span>{{upgrade.name}} - Prix: {{upgrade.actualPrice | number}}$ - Niveau: {{upgrade.level}}</span>
       <div class="buttons">
         <button (click)="buy(upgrade, 1)">+1</button>
@@ -20,7 +20,7 @@
 
   <div class="category">
     <h3>NIRD Assistant</h3>
-    <div class="item" *ngFor="let upgrade of nirdUpgrades()">
+    <div class="item" *ngFor="let upgrade of nirdUpgrades">
       <span>{{upgrade.name}} - Prix: {{upgrade.actualPrice | number}}$ - Niveau: {{upgrade.level}}</span>
       <div class="buttons">
         <button (click)="buy(upgrade, 1)">+1</button>

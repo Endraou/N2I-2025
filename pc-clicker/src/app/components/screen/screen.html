@@ -2,6 +2,7 @@
   <div class="app-wrapper">
     <img [src]="pathScreen" class="screen" (click)="onScreenClick()">
     <div class="app">
+      <p> {{ money() | number }} $ </p>
       <img [src]="pathMicro" id="micro">
       <img [src]="pathMicro" id="chrome">
       <img [src]="pathMicro" id="picture">

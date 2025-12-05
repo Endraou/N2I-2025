@@ -26,5 +26,6 @@ export class Software extends Upgrade{
       this._downgraded = false;
       return true;
     }
+    return false;
   }
 }

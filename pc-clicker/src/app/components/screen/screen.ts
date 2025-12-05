@@ -2,6 +2,7 @@ import {Component, signal, ViewChild} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; // <--- IMPORTANT
 import { ShopPopupComponent} from '../shop/shop';
+import {LogiqueJeuService} from '../../logique-jeu/logique-jeu-service';
 
 @Component({
   selector: 'game-screen',
@@ -17,14 +18,16 @@ export class GameScreen {
   protected pathMicro: string;
   showStore = signal(false);
 
+  protected money;
 
-  constructor() {
+  constructor(private logiqueJeu : LogiqueJeuService) {
+    this.money = this.logiqueJeu.logique.money;
     this.pathScreen = "windows_pixel_art.png";
     this.pathMicro = "Wicrosoft Mord.png";
   }
 
   onScreenClick() {
-    console.log("You clicked");
+    this.logiqueJeu.logique.clickOnScreen();
   }
 
   openStore() {
