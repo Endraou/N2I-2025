@@ -10,5 +10,5 @@
     </div>
     <img src="Wicrosoft Mord.png" id="store" (click)="openStore()">
   </div>
-  <app-shop-popup *ngIf="showStore()"/>
+  <app-shop-popup *ngIf="showStore()" (close)="closeStore()"/>
 </div>

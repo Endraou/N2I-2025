@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import {Component, signal, ViewChild} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; // <--- IMPORTANT
 import { ShopPopupComponent} from '../shop/shop';
@@ -17,6 +17,7 @@ export class GameScreen {
   protected pathMicro: string;
   showStore = signal(false);
 
+
   constructor() {
     this.pathScreen = "windows_pixel_art.png";
     this.pathMicro = "Wicrosoft Mord.png";
@@ -31,6 +32,8 @@ export class GameScreen {
   }
 
   closeStore() {
+
     this.showStore.set(false);
   }
+
 }
