@@ -13,6 +13,7 @@
 
 /* Pop-up flottante centrée */
 .popup {
+  font-family: 'Connection', sans-serif;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -21,23 +22,48 @@
   padding: 20px;
   border: 2px solid #333;
   border-radius: 10px;
-  width: 450px;
+  width: 23%;
   max-height: 80vh;
   overflow-y: auto;
   z-index: 1001; /* au-dessus du backdrop */
 }
 
+#money {
+  font-weight: bold;
+  color: #3a9600;
+}
+
 /* Bouton de fermeture */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #f44336;
+  top: 3%;
+  right: 2.5%;
+  background: #881400;
+  font-family: 'Connection', sans-serif;
+  border-bottom: 3px inset rgba(0,0,0,.5);
+  border-left: 3px inset rgba(0,0,0,.5);
+  border-right: 3px inset rgba(255,255,255,.5);
+  border-top: 3px inset rgba(255,255,255,.5);
+  box-sizing: border-box;
   color: white;
-  border: none;
-  padding: 5px 10px;
   cursor: pointer;
-  border-radius: 5px;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 1rem;
+  padding: .1rem .3rem 0 .3rem;
+  text-transform: uppercase;
+  width: auto;
+  justify-content : center;
+
+  &:focus,
+  &:hover {
+    background: #BCBCBC;
+  }
+
+  &:focus,
+  &:hover {
+    background: #A81000;
+  }
 }
 
 .category {
@@ -55,4 +81,44 @@
   margin-left: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  background: #881400;
+  font-family: 'Connection', sans-serif;
+  border-bottom: 3px inset rgba(0,0,0,.5);
+  border-left: 3px inset rgba(0,0,0,.5);
+  border-right: 3px inset rgba(255,255,255,.5);
+  border-top: 3px inset rgba(255,255,255,.5);
+  box-sizing: border-box;
+  color: white;
+
+  &:focus,
+  &:hover {
+    background: #A81000;
+  }
+}
+
+#one {
+  background: rgba(73, 73, 73, 0.8);
+
+  &:focus,
+  &:hover {
+    background: rgba(73, 73, 73, 0.65);
+  }
+}
+
+#ten {
+  background: rgb(32, 164, 243);
+
+  &:focus,
+  &:hover {
+    background: rgba(32, 164, 243, 0.65);
+  }
+}
+
+#cent {
+  background: rgb(86, 3, 173);
+
+  &:focus,
+  &:hover {
+    background: rgba(86, 3, 173, 0.65);
+  }
 }

@@ -24,7 +24,7 @@ export class LogiqueJeu{
  */
     this._openSourceUpgrades.set([
         new Software("Wicrosoft Office", 20, 1.05, 1, false, "Freedom Office"),
-        new Software("goggle zinc", 100, 1.1, 3, false, "Icedog"),
+        new Software("Goggle zinc", 100, 1.1, 3, false, "Icedog"),
         new Software("Adopt fotoshoot", 500, 1.25, 10, false, "GIMS"),
         new Software("Wicrosoft video", 2500, 2, 25, false, "VLC" ), //éventuellement changer le nom de VLC
         new Software("Glettter", 10000, 2.5, 75, false, "SunnyBunny")
