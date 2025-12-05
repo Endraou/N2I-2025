@@ -1,5 +1,8 @@
 <!-- shop-popup.component.html -->
+<div class="backdrop" (click)="closeShop()"></div>
+
 <div class="popup">
+  <button class="close-btn" (click)="closeShop()">X</button>
   <h2>Shop</h2>
   <p>Argent disponible : {{ money() | number }}</p>
 

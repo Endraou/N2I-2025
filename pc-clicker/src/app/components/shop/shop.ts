@@ -1,7 +1,8 @@
 // src/app/shop-popup/shop-popup.component.ts
-import { Component, signal } from '@angular/core';
+import {Component, EventEmitter, Output, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Upgrade } from '../../upgrade';
+import {GameScreen} from '../screen/screen';
 
 @Component({
   selector: 'app-shop-popup',
@@ -14,6 +15,8 @@ export class ShopPopupComponent {
 
   // Argent disponible
   money = signal(1000);
+
+  @Output() close = new EventEmitter<void>();
 
   // Catégories
   openSourceUpgrades = signal<Upgrade[]>([]);
@@ -48,6 +51,10 @@ export class ShopPopupComponent {
     } else {
       alert('Pas assez d’argent !');
     }
+  }
+
+  closeShop() {
+    this.close.emit();
   }
 
 }
