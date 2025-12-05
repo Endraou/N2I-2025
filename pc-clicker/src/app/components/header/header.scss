@@ -1,26 +1,74 @@
 /* Masquer le lien */
 #liens {
-  display: none;   /* cache complètement l'élément */
+  display: none;
 }
 
 /* Header */
 header {
-  display: flex;              /* mise en ligne des éléments */
-  justify-content: space-between; /* images aux extrémités */
-  align-items: center;        /* alignement vertical */
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc; /* fine ligne en bas du header */
-  background-color: #f9f9f9;
-}
-
-/* Les images */
-header img {
-  max-height: 50px;           /* taille raisonnable */
-}
-
-/* Le bouton centré */
-header app-gamebtn {
-  flex: 1;                    /* occupe l’espace central */
+  font-family: 'Connection', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: center;    /* centré horizontalement */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+  z-index: 1000;
+
+  /* Caché par défaut */
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+
+  a img{
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    padding: 0.05%;
+    background-color: white;
+    transition: all 0.3s ease;
+    aspect-ratio: 1 / 1;
+    filter : grayscale(100%);
+    display : block;
+  }
+  a {
+    display: inline-block;
+    padding : 0;
+    margin : 0;
+    line-height: 0;
+    aspect-ratio: 1 / 1;
+    max-height: 3%;
+    max-width: 3%;
+  }
+  #left {
+    margin-left: 1%;
+  }
+  #right {
+    margin-right: 1%;
+  }
+
+
+  a img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  app-gamebtn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+header.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }

@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, Input, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
@@ -11,4 +11,5 @@ import {CommonModule} from '@angular/common';
 })
 export class FooterComponent {
   protected readonly title = signal('pc-clicker');
+  @Input() scrolled: boolean = false;
 }

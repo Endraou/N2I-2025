@@ -13,4 +13,8 @@ import {CommonModule, NgClass} from '@angular/common';
 export class HeaderComponent {
   protected readonly title = signal('pc-clicker');
   @Input() scrolled: boolean = false;
+
+  rickRolled() {
+
+  }
 }

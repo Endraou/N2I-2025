@@ -22,5 +22,14 @@
 .box-button:active {
   padding: 0;
   margin-bottom: 10px;
-  transform: translateY(10px);
+  transform: translateY(6%);
+}
+.box-button:hover {
+  background-color: #3a9600;
+  border: 4px solid #185500;
+  color: #fff;
+}
+
+.box-button:hover .button {
+  background-color: #4cc800;
 }
