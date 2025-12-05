@@ -1,8 +1,12 @@
 import {Software} from './software';
 import {Upgrade} from './upgrade';
 import {HardwareUpgrade} from './hardwareUpgrade';
+import {Injectable} from '@angular/core';
 
-class LogiqueJeu{
+@Injectable({
+  providedIn: 'root'
+})
+export class LogiqueJeu{
   constructor() {
     /*
   * Instanciation des upgrades logiciels
@@ -42,5 +46,17 @@ class LogiqueJeu{
     HDD.addUpgrade(diskDefrag);
     HDD.addUpgrade(trimSupport);
   }
+  /*
+  * Instanciation des associés NIRD
+  */
 
+  /*this.nirdUpgrades.set([
+                          new Upgrade('George', 500, 1.2, 5, true),
+                          new Upgrade('Claude', 700, 1.25, 6, true),
+                          new Upgrade('Elizabeth', 900, 1.3, 8, true),
+                          new Upgrade('Roger', 600, 1.2, 5, true),
+                          new Upgrade('Nina', 800, 1.2, 6, true)
+                        ]);
+
+   */
 }
