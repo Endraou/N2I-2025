@@ -1,0 +1,5 @@
+@if (time$ | async; as seconds) {
+  <div class="timer">
+    <h1>Time Remaining: {{ formatTime(seconds) }}</h1>
+  </div>
+}
