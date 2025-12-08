@@ -1,0 +1,54 @@
+/* Masquer le lien */
+#liens {
+  display: none;
+}
+
+/* Footer */
+footer {
+  font-family: 'Connection', sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+  z-index: 1000;
+
+  /* Caché par défaut - en dessous de l'écran */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+/* Footer visible quand on scroll */
+footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Style des liens */
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer a {
+  color: rgba(44, 44, 44, 0.3);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+footer a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(228, 228, 228);
+  transform: translateY(-2px);
+}
