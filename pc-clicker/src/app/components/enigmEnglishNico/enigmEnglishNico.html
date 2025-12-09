@@ -1,0 +1,107 @@
+<div>
+    <div class="title">Complete Mr. Tigly's monologue</div>
+  <p>
+      Remember, Polytech is represented by you, the students,
+      so you can’t take all the plates offered at the buffet,
+      when all the companies come with the objective of hiring you.
+  </p>
+    <p>
+  Come on, that's not professional so let's break the
+  <span class="blank">
+    <select #ice (change)="addAnswer(ice.value,0)">
+      <option value="">-- choose --</option>
+      <option>cake</option>
+      <option>ice</option>
+      <option>computer</option>
+    </select>
+  </span>
+  , who did it?
+  </p>
+
+  <p>
+  Okay, nobody wants to talk, no problem, but my trust in you has clearly declined.
+  I was thinking that we were like two
+  <span class="blank">
+    <select #peas (change)="addAnswer(peas.value, 1)">
+      <option value="">-- choose --</option>
+      <option>peas</option>
+      <option>apples</option>
+      <option>burgers</option>
+    </select>
+  </span>
+  in a
+  <span class="blank">
+    <select #pod (change)="addAnswer(pod.value, 2)">
+      <option value="">-- choose --</option>
+      <option>house</option>
+      <option>truck</option>
+      <option>pod</option>
+    </select>
+  </span>
+  .
+  </p>
+
+  <p>
+    Now everything will be more difficult in our relationship. Everything was taken for granted, now
+    you will need to earn my respect and go the extra
+    <span class="blank">
+    <select #mile (change)="addAnswer(mile.value, 3)">
+      <option value="">-- choose --</option>
+      <option>mall</option>
+      <option>spaceship</option>
+      <option>mile</option>
+    </select>
+  </span>
+  </p>
+
+  <p>
+    I've said what I wanted to say. Now the
+      <span class="blank">
+    <select #ball (change)="addAnswer(ball.value, 4)">
+      <option value="">-- choose --</option>
+      <option>ball</option>
+      <option>chicken</option>
+      <option>point</option>
+    </select>
+  </span>
+      is in your <span class="blank">
+    <select #court (change)="addAnswer(court.value, 5)">
+      <option value="">-- choose --</option>
+      <option>mall</option>
+      <option>side</option>
+      <option>court</option>
+    </select>
+  </span>
+      .
+  </p>
+
+    <p>
+        I hope that the school's reputation will not be affected and that we will not hit
+        <span class="blank">
+    <select #rock (change)="addAnswer(rock.value, 6)">
+      <option value="">-- choose --</option>
+      <option>paper</option>
+      <option>rock</option>
+      <option>scissors</option>
+    </select>
+  </span>
+        <span class="blank">
+    <select #bottom (change)="addAnswer(bottom.value, 7)">
+      <option value="">-- choose --</option>
+      <option>bottom</option>
+      <option>rock</option>
+      <option>pen</option>
+    </select>
+  </span>.
+    </p>
+
+  <button class="button-validate" (click)="showResult()"> Validate</button>
+
+  <div class="response" *ngIf="isValid&&isValidateButtonClicked">
+    Congrats, you've done it!
+    <button class="button-next-step" routerLink="/">Go Next Step</button>
+  </div>
+
+    <div class="badResponse" *ngIf="!isValid&&isValidateButtonClicked">Try again, you made <span id="number">{{nbOfFaults}}</span> fault(s) !</div>
+
+</div>
