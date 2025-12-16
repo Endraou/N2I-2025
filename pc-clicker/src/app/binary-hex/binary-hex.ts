@@ -4,10 +4,11 @@ import { HeaderComponent } from '../components/header/header';
 import { GamebtnComponent } from '../components/gamebtn/gamebtn';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {HintbtnComponent} from '../components/hintbtn/hintbtn';
 
 @Component({
   selector: 'app-homepage',
-  imports: [HeaderComponent, FooterComponent, GamebtnComponent, CommonModule, FormsModule],
+  imports: [HeaderComponent, FooterComponent, GamebtnComponent, CommonModule, FormsModule, HintbtnComponent],
   standalone: true,
   templateUrl: './binary-hex.html',
   styleUrls: ['./binary-hex.scss'],
@@ -38,4 +39,12 @@ export class BinaryHex implements OnInit {
       this.enteredNumber = '';
     }
   }
+
+  cipherHints: string[] = [
+    'Hint 1 : why is there a hex code ?',
+    'Hint 2 : is the hex code related to the phone number',
+    'Hint 3 : like a point to point conversion'
+  ];
+
+  resetHintsTrigger = 0;
 }

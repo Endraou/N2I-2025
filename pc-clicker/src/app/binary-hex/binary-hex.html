@@ -28,3 +28,7 @@
   <!-- Message de retour -->
   <p *ngIf="message">{{ message }}</p>
 </main>
+
+<div class="hint-container">
+  <app-hintbtn [hints]="cipherHints" [resetTrigger]="resetHintsTrigger"></app-hintbtn>
+</div>

@@ -91,3 +91,14 @@ label{
   border: white 1px solid;
 }
 
+.hint-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+app-hintbtn {
+  width: 10%;
+  height: 10%;
+  display: block;
+}

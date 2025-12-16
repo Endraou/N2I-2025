@@ -54,7 +54,7 @@ export class Homepage implements OnInit {
     }
   }
 
-  goConditional(){
+  goConditional() {
     this.router.navigate(['/conditional']);
   }
   goEnigme1() {

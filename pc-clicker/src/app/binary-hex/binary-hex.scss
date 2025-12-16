@@ -86,3 +86,15 @@ main {
   transform: translateY(1px);
   box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff;
 }
+
+.hint-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+app-hintbtn {
+  width: 20%;
+  height: 20%;
+  display: block;
+}

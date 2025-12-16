@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import {HintbtnComponent} from '../hintbtn/hintbtn';
 
 @Component({
   selector: 'app-conditional',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HintbtnComponent],
   templateUrl: './conditional.html',
   styleUrl: './conditional.scss',
 })
@@ -13,6 +14,14 @@ export class Conditional {
 
   constructor(private router : Router) {
   }
+
+  cipherHints: string[] = [
+    'Hint 1 : It reminds me of conditional rules in english',
+    'Hint 2 : There are three cases right ? Present -> futur',
+    'Hint 3 : or check your previous lessons, quickly !'
+  ];
+
+  resetHintsTrigger = 0;
 
   currentQuestion = 0;
   questions = [
