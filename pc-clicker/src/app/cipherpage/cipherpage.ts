@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CipherbtnComponent } from '../components/cipherbtn/cipherbtn';
 import {Router} from '@angular/router';
+import {TimerComponent} from '../components/timer/timer';
 
 interface GridConfig {
   btnSize: number;
@@ -12,7 +13,7 @@ interface GridConfig {
 @Component({
   selector: 'app-cipherpage',
   standalone: true,
-  imports: [CommonModule, CipherbtnComponent],
+  imports: [CommonModule, CipherbtnComponent, TimerComponent],
   templateUrl: './cipherpage.html',
   styleUrl: './cipherpage.scss',
 })
