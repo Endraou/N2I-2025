@@ -13,6 +13,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./homepage.scss'],
 })
 export class Homepage implements OnInit {
+
+  constructor(private router: Router) {
+  }
+
   protected readonly title = signal('pc-clicker');
   hideButton = false;
 
@@ -52,6 +56,8 @@ export class Homepage implements OnInit {
     }
   }
 
+  goConditional(){
+    this.router.navigate(['/conditional']);
   goEnigme1() {
     this.router.navigate(["/enignme1"]);
   }
