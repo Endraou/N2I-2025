@@ -54,14 +54,14 @@ export class Conditional {
       index: 3
     },
     {
-      verbs: ["find", "will pass"],
+      verbs: ["find", "will"],
       type: "first",
       inputs: ["", ""],
       selectedType: "",
       index: 4
     },
     {
-      verbs: ["were", "would put"],
+      verbs: ["was", "would"],
       type: "second",
       inputs: ["", ""],
       selectedType: "",
@@ -95,7 +95,8 @@ export class Conditional {
     if(correct){
       this.showAnswer(true, "Right answer !")
       this.doneQuestions.push(q.index);
-      while(this.doneQuestions.includes(q.index)){
+      this.currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
+      while(this.doneQuestions.includes(this.currentQuestion.index)){
         this.currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
       }
 
