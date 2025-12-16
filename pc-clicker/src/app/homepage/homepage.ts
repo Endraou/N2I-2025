@@ -3,11 +3,12 @@ import {FooterComponent} from '../components/footer/footer';
 import {HeaderComponent} from '../components/header/header';
 import {GamebtnComponent} from '../components/gamebtn/gamebtn';
 import {CommonModule} from '@angular/common';
+import {RouterLink} from '@angular/router';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
-  imports: [HeaderComponent, FooterComponent, GamebtnComponent, CommonModule],
+  imports: [HeaderComponent, FooterComponent, GamebtnComponent, CommonModule, RouterLink],
   standalone : true,
   templateUrl: './homepage.html',
   styleUrls: ['./homepage.scss'],
