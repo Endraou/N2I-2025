@@ -1,0 +1,18 @@
+<body>
+<div class="top-container">
+  <div id="output-container">
+    <span class="output-text">{{ selectedLetters }}</span>
+  </div>
+  <button class="clear-button" (click)="clearSelection()">Clear</button>
+</div>
+<div class="grid-container">
+  <app-cipherbtn
+    *ngFor="let btn of buttons"
+    [label]="btn.toString()"
+    (click)="onButtonClick(btn)">
+  </app-cipherbtn>
+</div>
+<div class="hint-container">
+  <app-hintbtn [hints]="cipherHints" [resetTrigger]="resetHintsTrigger"></app-hintbtn>
+</div>
+</body>
