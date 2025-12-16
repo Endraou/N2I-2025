@@ -16,7 +16,8 @@ export class Homepage implements OnInit {
   protected readonly title = signal('pc-clicker');
   hideButton = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     this.hideButton = false;
@@ -49,5 +50,9 @@ export class Homepage implements OnInit {
         texteDiv.classList.remove('visible-content');
       }
     }
+  }
+
+  goEnigme1() {
+    this.router.navigate(["/enignme1"]);
   }
 }
