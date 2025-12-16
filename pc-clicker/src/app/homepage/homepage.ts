@@ -3,6 +3,7 @@ import {FooterComponent} from '../components/footer/footer';
 import {HeaderComponent} from '../components/header/header';
 import {GamebtnComponent} from '../components/gamebtn/gamebtn';
 import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -15,10 +16,16 @@ export class Homepage implements OnInit {
   protected readonly title = signal('pc-clicker');
   hideButton = false;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.hideButton = false;
     // Scroll automatiquement en haut au chargement
     window.scrollTo(0, 0);
+  }
+
+  goToCipher() {
+    this.router.navigate(['cipher']);
   }
 
   @HostListener('window:scroll')

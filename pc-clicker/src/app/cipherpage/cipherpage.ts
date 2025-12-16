@@ -21,7 +21,7 @@ export class Cipherpage implements OnInit, OnDestroy {
   buttons: string[] = [];
   selectedLetters: string = '';
   private currentShift: number = 0;
-  private readonly password: string = 'B';
+  private readonly password: string = 'TEST';
 
   constructor(private router: Router) {}
 
