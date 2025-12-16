@@ -1,0 +1,92 @@
+<div class="bg">
+<div class="header">
+  <h1>ENGLISH TEST !</h1>
+  <h2>Let's see what you're made of for the <span style="  color: #ff00ff;
+  text-shadow:
+    0 0 2px #ff00ff,
+    0 0 4px #ff00ff,
+    0 0 6px #ff00ff;">conditionals</span>!</h2>
+
+  <h2>Fill in the <span style="  color: #ff00ff;
+  text-shadow:
+    0 0 2px #ff00ff,
+    0 0 4px #ff00ff,
+    0 0 6px #ff00ff;">blanks</span> to get to the next riddle</h2>
+</div>
+
+<div class="questionnaire">
+
+  <div class="question" *ngIf="currentQuestion === 0">
+    <div class="input">
+    If I (know)
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[0].inputs[0]" id="verbInput1">
+      the password, I (will)
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[0].inputs[1]" id="verbInput2">
+    change my english marks ! <!-- second conditional -->
+    </div>
+    <label for="select1">Choose a type :</label>
+    <select id="select1" class="types" [(ngModel)]="questions[0].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion === 1">
+    <div class="input">
+    If you (have)
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[1].inputs[0]" id="verbInput3">
+      studied, you (will)
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[1].inputs[1]" id="verbInput4">
+      have to hack Mr. Tiglis account ! <!-- third conditional -->
+    </div>
+    <label for="select2">Choose a type :</label>
+    <select id="select2" class="types" [(ngModel)]="questions[1].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion === 2">
+    <div class="input">
+    If you
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[2].inputs[0]" id="verbInput5">
+      caught, you
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[2].inputs[1]" id="verbInput6">
+      be banned of Polytech... <!-- first conditional -->
+    </div>
+    <label for="select3">Choose a type :</label>
+    <select id="select3" class="types" [(ngModel)]="questions[2].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion === 3">
+    <div class="input">
+    If you
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[3].inputs[0]" id="verbInput7">
+      your conditional lesson, everything
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[3].inputs[1]" id="verbInput8">
+      well. <!-- zero conditional -->
+    </div>
+    <label for="select4">Choose a type :</label>
+    <select id="select4" class="types" [(ngModel)]="questions[3].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+</div>
+</div>

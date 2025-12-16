@@ -3,6 +3,7 @@ import {FooterComponent} from '../components/footer/footer';
 import {HeaderComponent} from '../components/header/header';
 import {GamebtnComponent} from '../components/gamebtn/gamebtn';
 import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -12,6 +13,10 @@ import {CommonModule} from '@angular/common';
   styleUrls: ['./homepage.scss'],
 })
 export class Homepage implements OnInit {
+
+  constructor(private router: Router) {
+  }
+
   protected readonly title = signal('pc-clicker');
   hideButton = false;
 
@@ -42,5 +47,9 @@ export class Homepage implements OnInit {
         texteDiv.classList.remove('visible-content');
       }
     }
+  }
+
+  goConditional(){
+    this.router.navigate(['/conditional']);
   }
 }
