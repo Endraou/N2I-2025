@@ -1,0 +1,30 @@
+<main>
+
+  <!-- Téléphone au centre -->
+  <div class="phone">
+    <img [src]="phonePhoto" alt="Phone">
+  </div>
+
+  <!-- Input + Numpad à droite -->
+  <div class="tel">
+    <input
+      id="tel-input"
+      type="tel"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      placeholder="Entrez un numéro"
+      [(ngModel)]="enteredNumber"
+    />
+
+    <div class="numpad">
+      <button *ngFor="let btn of buttons" (click)="appendNumber(btn)">
+        {{ btn }}
+      </button>
+    </div>
+
+    <button (click)="checkNumber()">Valider</button>
+  </div>
+
+  <!-- Message de retour -->
+  <p *ngIf="message">{{ message }}</p>
+</main>
