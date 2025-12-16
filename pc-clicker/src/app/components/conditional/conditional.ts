@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import {HintbtnComponent} from '../hintbtn/hintbtn';
+import {TimerComponent} from '../timer/timer';
 
 @Component({
   selector: 'app-conditional',
-  imports: [FormsModule, CommonModule, HintbtnComponent],
+  imports: [FormsModule, CommonModule, HintbtnComponent, TimerComponent],
   templateUrl: './conditional.html',
   styleUrl: './conditional.scss',
 })

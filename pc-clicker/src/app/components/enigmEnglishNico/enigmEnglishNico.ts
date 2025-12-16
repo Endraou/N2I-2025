@@ -2,11 +2,12 @@ import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterLink} from "@angular/router";
 import {HintbtnComponent} from '../hintbtn/hintbtn';
+import {TimerComponent} from '../timer/timer';
 
 @Component({
   selector: 'app-english-enigm-Nico',
   standalone : true,
-  imports: [CommonModule, RouterLink, HintbtnComponent],
+  imports: [CommonModule, RouterLink, HintbtnComponent, TimerComponent],
   templateUrl: 'enigmEnglishNico.html',
   styleUrl: 'enigmEnglishNico.scss',
 })

@@ -5,10 +5,11 @@ import { GamebtnComponent } from '../components/gamebtn/gamebtn';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HintbtnComponent} from '../components/hintbtn/hintbtn';
+import {TimerComponent} from '../components/timer/timer';
 
 @Component({
   selector: 'app-homepage',
-  imports: [HeaderComponent, FooterComponent, GamebtnComponent, CommonModule, FormsModule, HintbtnComponent],
+  imports: [HeaderComponent, FooterComponent, GamebtnComponent, CommonModule, FormsModule, HintbtnComponent, TimerComponent],
   standalone: true,
   templateUrl: './binary-hex.html',
   styleUrls: ['./binary-hex.scss'],

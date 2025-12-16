@@ -4,6 +4,7 @@ import { CipherbtnComponent } from '../components/cipherbtn/cipherbtn';
 import { HintbtnComponent} from '../components/hintbtn/hintbtn';
 import {Router} from '@angular/router';
 import {TimerComponent} from '../components/timer/timer';
+import {ClockService} from '../service/clock_service';
 
 interface GridConfig {
   btnSize: number;
@@ -33,7 +34,7 @@ export class Cipherpage implements OnInit, OnDestroy {
 
   resetHintsTrigger = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private clock: ClockService) {}
 
   private readonly alphabet: string[] = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -44,7 +45,8 @@ export class Cipherpage implements OnInit, OnDestroy {
   private checkPassword(): void {
     if (this.selectedLetters === this.password) {
       alert('Password correct! Access granted!');
-      this.router.navigate(['']);
+      this.clock.resetTimer();
+      this.router.navigate(['goodend']);
     } else if (this.selectedLetters.length >= this.password.length) {
       // Password is wrong and too long
       alert('Wrong password!');
