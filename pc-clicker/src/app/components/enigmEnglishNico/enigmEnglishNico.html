@@ -105,3 +105,7 @@
     <div class="badResponse" *ngIf="!isValid&&isValidateButtonClicked">Try again, you made <span id="number">{{nbOfFaults}}</span> mistake(s) !</div>
 
 </div>
+<div class="hint-container">
+  <app-hintbtn [hints]="cipherHints" [resetTrigger]="resetHintsTrigger"></app-hintbtn>
+</div>
+

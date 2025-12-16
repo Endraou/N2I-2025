@@ -72,3 +72,15 @@ app-cipherbtn {
 .clear-button:active {
   transform: scale(0.95);
 }
+
+.hint-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+app-hintbtn {
+  width: 10%;
+  height: 10%;
+  display: block;
+}

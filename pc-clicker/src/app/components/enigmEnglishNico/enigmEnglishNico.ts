@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterLink} from "@angular/router";
+import {HintbtnComponent} from '../hintbtn/hintbtn';
 
 @Component({
   selector: 'app-english-enigm-Nico',
   standalone : true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, HintbtnComponent],
   templateUrl: 'enigmEnglishNico.html',
   styleUrl: 'enigmEnglishNico.scss',
 })
@@ -20,6 +21,15 @@ export class EnglishNicoComponent {
 
   constructor() {
   }
+
+  cipherHints: string[] = [
+    'Hint 1 : I think it happened last year...',
+    'Hint 2 : Didn\'t he mention something about eating ?',
+    'Hint 3 : with other companies like Amadeus'
+  ];
+
+  resetHintsTrigger = 0;
+
 
 
   validAnswers():boolean{

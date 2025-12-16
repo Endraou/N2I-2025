@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CipherbtnComponent } from '../components/cipherbtn/cipherbtn';
+import { HintbtnComponent} from '../components/hintbtn/hintbtn';
 import {Router} from '@angular/router';
 import {TimerComponent} from '../components/timer/timer';
 
@@ -13,7 +14,7 @@ interface GridConfig {
 @Component({
   selector: 'app-cipherpage',
   standalone: true,
-  imports: [CommonModule, CipherbtnComponent, TimerComponent],
+  imports: [CommonModule, CipherbtnComponent, HintbtnComponent, TimerComponent],
   templateUrl: './cipherpage.html',
   styleUrl: './cipherpage.scss',
 })
@@ -23,6 +24,14 @@ export class Cipherpage implements OnInit, OnDestroy {
   selectedLetters: string = '';
   private currentShift: number = 0;
   private readonly password: string = 'TEST';
+
+  cipherHints: string[] = [
+    'Hint 1 : It seems to use a Caesar Cypher',
+    'Hint 2 : The shift might be irregular',
+    'Hint 3 : Pay attention to the shift for each letter entered'
+  ];
+
+  resetHintsTrigger = 0;
 
   constructor(private router: Router) {}
 
@@ -84,6 +93,7 @@ export class Cipherpage implements OnInit, OnDestroy {
   clearSelection(): void {
     this.selectedLetters = '';
     this.currentShift = 0;
+    this.resetHintsTrigger++;
   }
 
   private shuffleArray(array: string[]): string[] {
