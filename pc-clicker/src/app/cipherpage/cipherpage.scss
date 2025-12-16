@@ -10,8 +10,15 @@
   box-sizing: border-box;
 }
 body {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   font-family: 'Connection', sans-serif;
+}
+
+app-timer {
+  align-self: center;
+  font-size: 2rem;
 }
 
 app-cipherbtn {

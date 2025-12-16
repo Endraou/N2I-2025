@@ -1,0 +1,5 @@
+@if ({ val: time$ | async }; as timeObj) {
+  <div class="timer">
+    <h1>Time Remaining: {{ formatTime(timeObj.val) }}</h1>
+  </div>
+}
