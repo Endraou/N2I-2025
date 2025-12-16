@@ -24,7 +24,7 @@ export class Cipherpage implements OnInit, OnDestroy {
   buttons: string[] = [];
   selectedLetters: string = '';
   private currentShift: number = 0;
-  private readonly password: string = 'TEST';
+  private readonly password: string = 'T!GL!NUMBERONE';
 
   cipherHints: string[] = [
     'Hint 1 : It seems to use a Caesar Cypher',
