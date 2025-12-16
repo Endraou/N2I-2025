@@ -14,9 +14,9 @@
   <div id="texte" [ngClass]="{ 'visible-content': hideButton }">
     <h2>Synopsis</h2>
     <p>
-      we failed the middleware presentation with Mr.Tigli, we got a 0 and our year is doomed. 
-      This is unacceptable, we have to change this mark to validate the year. 
-      To do so, you will have to log into his account and hack the ## layers protecting it. 
+      we failed the middleware presentation with Mr.Tigli, we got a 0 and our year is doomed.
+      This is unacceptable, we have to change this mark to validate the year.
+      To do so, you will have to log into his account and hack the ## layers protecting it.
       Of course, I will provide you with guidances, don't worry. Be quick, we need to change the mark before Mr.Tigli comes back to his office.
     </p>
 
@@ -35,7 +35,7 @@
       anyway resolve this and keep going !
     </p>
     <div class="box-button">
-      <button class="button">Enigme</button>
+      <button (click)="goConditional()" class="button">Enigme</button>
     </div>
 
     <h2>Phone number</h2>
@@ -65,7 +65,6 @@
       numériques et de construire un avenir numérique plus juste et plus durable pour l'éducation.
     </p>
     <div class="box-button">
-      <button (click)="goConditional()" class="button">Enigme</button>
       <button class="button" (click)="goToCipher()">Enigme</button>
     </div>
   </div>

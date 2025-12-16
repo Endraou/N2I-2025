@@ -20,9 +20,6 @@ export class Homepage implements OnInit {
   protected readonly title = signal('pc-clicker');
   hideButton = false;
 
-  constructor(private router: Router) {
-  }
-
   ngOnInit() {
     this.hideButton = false;
     // Scroll automatiquement en haut au chargement
@@ -58,6 +55,7 @@ export class Homepage implements OnInit {
 
   goConditional(){
     this.router.navigate(['/conditional']);
+  }
   goEnigme1() {
     this.router.navigate(["/enignme1"]);
   }

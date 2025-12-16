@@ -6,7 +6,7 @@ import {BinaryHex} from './binary-hex/binary-hex';
 
 export const routes: Routes = [
   {path : '', component: Homepage},
-  {path : 'conditional', component: Conditional}
+  {path : 'conditional', component: Conditional},
   {path : 'enignme1', component : BinaryHex},
   {path : 'cipher', component: Cipherpage},
 ];
