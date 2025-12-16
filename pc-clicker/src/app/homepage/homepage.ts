@@ -4,6 +4,7 @@ import {HeaderComponent} from '../components/header/header';
 import {GamebtnComponent} from '../components/gamebtn/gamebtn';
 import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -13,13 +14,24 @@ import {RouterLink} from '@angular/router';
   styleUrls: ['./homepage.scss'],
 })
 export class Homepage implements OnInit {
+
+  constructor(private router: Router) {
+  }
+
   protected readonly title = signal('pc-clicker');
   hideButton = false;
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     this.hideButton = false;
     // Scroll automatiquement en haut au chargement
     window.scrollTo(0, 0);
+  }
+
+  goToCipher() {
+    this.router.navigate(['cipher']);
   }
 
   @HostListener('window:scroll')
@@ -43,5 +55,11 @@ export class Homepage implements OnInit {
         texteDiv.classList.remove('visible-content');
       }
     }
+  }
+
+  goConditional(){
+    this.router.navigate(['/conditional']);
+  goEnigme1() {
+    this.router.navigate(["/enignme1"]);
   }
 }

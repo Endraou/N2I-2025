@@ -1,0 +1,7 @@
+<button class="box-button" (click)="giveHint()" [disabled]="currentHintIndex >= hints.length - 1">
+  Hint
+</button>
+
+<div class="hint-text" *ngIf="currentHint">
+  {{ currentHint }}
+</div>
