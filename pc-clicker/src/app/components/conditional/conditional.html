@@ -16,7 +16,7 @@
 
 <div class="questionnaire">
 
-  <div class="question" *ngIf="currentQuestion === 0">
+  <div class="question" *ngIf="currentQuestion.index === 0">
     <div class="input">
     If I (know)
       <input class="answer" placeholder="verb" [(ngModel)]="questions[0].inputs[0]" id="verbInput1">
@@ -34,7 +34,7 @@
     <button class="submitBtn" (click)="submit()">Submit</button>
   </div>
 
-  <div class="question" *ngIf="currentQuestion === 1">
+  <div class="question" *ngIf="currentQuestion.index === 1">
     <div class="input">
     If you (have)
       <input class="answer" placeholder="verb" [(ngModel)]="questions[1].inputs[0]" id="verbInput3">
@@ -52,7 +52,7 @@
     <button class="submitBtn" (click)="submit()">Submit</button>
   </div>
 
-  <div class="question" *ngIf="currentQuestion === 2">
+  <div class="question" *ngIf="currentQuestion.index === 2">
     <div class="input">
     If you
       <input class="answer" placeholder="verb" [(ngModel)]="questions[2].inputs[0]" id="verbInput5">
@@ -70,7 +70,7 @@
     <button class="submitBtn" (click)="submit()">Submit</button>
   </div>
 
-  <div class="question" *ngIf="currentQuestion === 3">
+  <div class="question" *ngIf="currentQuestion.index === 3">
     <div class="input">
     If you
       <input class="answer" placeholder="verb" [(ngModel)]="questions[3].inputs[0]" id="verbInput7">
@@ -80,6 +80,78 @@
     </div>
     <label for="select4">Choose a type :</label>
     <select id="select4" class="types" [(ngModel)]="questions[3].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion.index === 4">
+    <div class="input">
+      <span>If we (find)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[4].inputs[0]">
+      <span>the phone number, we (will)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[4].inputs[1]">
+      <span>pass the 2FA layer.</span>
+    </div>
+    <label>Choose a type :</label>
+    <select class="types" [(ngModel)]="questions[4].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion.index === 5">
+    <div class="input">
+      <span>If I (be)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[5].inputs[0]">
+      <span>Mr. Tigli, I (will)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[5].inputs[1]">
+      <span>put a stronger password!</span>
+    </div>
+    <label>Choose a type :</label>
+    <select class="types" [(ngModel)]="questions[5].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion.index === 6">
+    <div class="input">
+      <span>If Ms. Callaghan (have not)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[6].inputs[0]">
+      <span>helped, we (will)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[6].inputs[1]">
+      <span>failed the middleware test.</span>
+    </div>
+    <label>Choose a type :</label>
+    <select class="types" [(ngModel)]="questions[6].selectedType">
+      <option value="zero">Zero Conditional</option>
+      <option value="first">First Conditional</option>
+      <option value="second">Second Conditional</option>
+      <option value="third">Third Conditional</option>
+    </select>
+    <button class="submitBtn" (click)="submit()">Submit</button>
+  </div>
+
+  <div class="question" *ngIf="currentQuestion.index === 7">
+    <div class="input">
+      <span>If the server (detect)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[7].inputs[0]">
+      <span>an intruder, it automatically (lock)</span>
+      <input class="answer" placeholder="verb" [(ngModel)]="questions[7].inputs[1]">
+      <span>the account.</span>
+    </div>
+    <label>Choose a type :</label>
+    <select class="types" [(ngModel)]="questions[7].selectedType">
       <option value="zero">Zero Conditional</option>
       <option value="first">First Conditional</option>
       <option value="second">Second Conditional</option>

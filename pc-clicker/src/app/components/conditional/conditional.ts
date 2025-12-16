@@ -15,6 +15,7 @@ export class Conditional {
 
   constructor(private router : Router) {
   }
+  doneQuestions : number[] = [];
 
   cipherHints: string[] = [
     'Hint 1 : It reminds me of conditional rules in english',
@@ -24,36 +25,69 @@ export class Conditional {
 
   resetHintsTrigger = 0;
 
-  currentQuestion = 0;
   questions = [
     {
       verbs: ["knew", "would"],
       type: "second",
       inputs: ["", ""],
-      selectedType: ""
+      selectedType: "",
+      index: 0
     },
     {
       verbs: ["had", "would not"],
       type: "third",
       inputs: ["", ""],
-      selectedType: ""
+      selectedType: "",
+      index: 1
     },
     {
       verbs: ["get", "will"],
       type: "first",
       inputs: ["", ""],
-      selectedType: ""
+      selectedType: "",
+      index: 2
     },
     {
       verbs: ["study", "goes"],
       type: "zero",
       inputs: ["", ""],
-      selectedType: ""
+      selectedType: "",
+      index: 3
+    },
+    {
+      verbs: ["find", "will"],
+      type: "first",
+      inputs: ["", ""],
+      selectedType: "",
+      index: 4
+    },
+    {
+      verbs: ["was", "would"],
+      type: "second",
+      inputs: ["", ""],
+      selectedType: "",
+      index: 5
+    },
+    {
+      verbs: ["had not", "would have"],
+      type: "third",
+      inputs: ["", ""],
+      selectedType: "",
+      index: 6
+    },
+    {
+      verbs: ["detects", "locks"],
+      type: "zero",
+      inputs: ["", ""],
+      selectedType: "",
+      index: 7
     }
   ];
 
+  currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
+
   submit(){
-    const q = this.questions[this.currentQuestion];
+    const q = this.currentQuestion;
 
     const correct = q.inputs[0].trim().toLowerCase() == q.verbs[0] &&
     q.inputs[1].trim().toLowerCase() == q.verbs[1] &&
@@ -61,9 +95,13 @@ export class Conditional {
 
     if(correct){
       this.showAnswer(true, "Right answer !")
-      this.currentQuestion++;
+      this.doneQuestions.push(q.index);
+      this.currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
+      while(this.doneQuestions.includes(this.currentQuestion.index)){
+        this.currentQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
+      }
 
-      if(this.currentQuestion >= this.questions.length){
+      if(this.doneQuestions.length >= this.questions.length){
         this.backHome();
       }
     }
