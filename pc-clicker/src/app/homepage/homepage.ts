@@ -25,6 +25,10 @@ export class Homepage implements OnInit {
     window.scrollTo(0, 0);
   }
 
+  goToCipher() {
+    this.router.navigate(['cipher']);
+  }
+
   @HostListener('window:scroll')
   onScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
